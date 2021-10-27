@@ -22,7 +22,12 @@ flux helm operator & helm releases, compare with https://github.com/kubernetes/i
 ### application repo
 
 deploy folder
+
+``` text
 |-- manifests OR kustomize OR helm chart
+
+```
+
 
 ## Onboard an AKS cluster directly
 
