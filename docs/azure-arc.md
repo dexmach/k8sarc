@@ -27,21 +27,4 @@ az extension add --name connectedk8s
 az extension add --name k8s-configuration
 ```
 
-## Create a primary cluster
 
-``` bash
-az aks create --resource-group rg-aks-primary --name aks-primary-cluster --enable-managed-identity -l westeurope --node-count 1 -s Standard_B4ms --kubernetes-version 1.21.2
-az aks get-credentials --resource-group rg-aks-primary --name aks-primary-cluster --admin
-```
-
-## Onboard Kubernetes clusters to Azure Arc
-
-[link](arc-onboarding.md)
-
-## Enable and use GitOps to deploy in cluster resources
-
-[link](gitops.md)
-
-## Deploy and manage Kubernetes clusters with the Cluster API
-
-[link](cluster-api.md)
