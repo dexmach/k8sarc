@@ -28,7 +28,6 @@ deploy folder
 
 ```
 
-
 ## Onboard an AKS cluster directly
 
 <!--
@@ -39,6 +38,8 @@ automatically onboard all clusters with azure policy <https://portal.azure.com/#
 kubectl get helmreleases -A
 helm ls -A & view values
 -->
+
+![cluster extensions](https://docs.microsoft.com/en-us/azure/azure-arc/kubernetes/media/conceptual-extensions.png)
 
 ``` bash
 az aks enable-addons --resource-group rg-aks-primary --name aks-primary-cluster --addons gitops
