@@ -1,0 +1,24 @@
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: reader
+  namespace: demo
+rules:
+- apiGroups: ["*"]
+  resources: ["*"]
+  verbs: ["get","list","watch"]
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: reader
+  namespace: demo
+subjects:
+- apiGroup: rbac.authorization.k8s.io
+  kind: Group
+  name: AD-Group
+roleRef:
+  kind: Role
+  name: reader
+  apiGroup: rbac.authorization.k8s.io
+---

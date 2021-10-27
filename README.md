@@ -2,12 +2,9 @@
 
 Welcome to the Arc for Kubernetes demo environment
 
-
-
 ## Demo overview
 
-all the steps:
-
+[link](demo.md)
 
 ## Setup your environment
 
@@ -18,7 +15,6 @@ To get started you need to setup the following elements:
     - Kubernetes cluster (management cluster)
 
 A detailed guide can be found in the [infrastructure setup article](./docs/infra_setup.md)
-
 
 ## Demo sessions
 

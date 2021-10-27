@@ -1,0 +1,69 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: demo-app-configmap
+  namespace: demo
+data:
+  NAME: "CNC"
+  TEXT: "How about a bit of Kubernetes 💚 with DexMach ?"
+  BACKGROUND_COLOR: '#22222'
+  COLOR: '#00000'
+  IMG_URI: "https://stadexmachassets.blob.core.windows.net/assets/cnc1.png"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-app
+  namespace: demo
+spec:
+  selector:
+    app: demo-app
+  ports:
+  - protocol: TCP
+    port: 5000
+    targetPort: 5000
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: demo-app
+  namespace: demo
+spec:
+  ingressClassName: nginx
+  rules:
+  - http:
+      paths:
+      - backend:
+          service:
+            name: demo-app
+            port:
+              number: 5000
+        path: /
+        pathType: Prefix
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-app
+  namespace: demo
+  labels:
+    app: demo-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-app
+  template:
+    metadata:
+      labels:
+        app: demo-app
+        forcedeploy: "1"
+    spec:
+      containers:
+      - name: demo-app
+        image: docker.io/smetmik/demo:v0.1.0
+        envFrom:
+        - configMapRef:
+            name: demo-app-configmap
+        ports:
+        - containerPort: 5000
