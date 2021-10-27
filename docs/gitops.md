@@ -4,6 +4,7 @@
 
 ### cluster administrator repo
 
+``` text
 operations folder
 |-- <cluster-name>
   |-- <non-namespaced-workloads>
@@ -11,6 +12,8 @@ operations folder
     |-- <rbac>
     |-- <limits>
     |-- <cluster-workloads>
+
+```
 
 <!--
 flux helm operator & helm releases, compare with https://github.com/kubernetes/ingress-nginx/tree/main/charts/ingress-nginx
