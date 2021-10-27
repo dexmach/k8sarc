@@ -7,7 +7,7 @@ Welcome to the Arc for Kubernetes demo environment
 Three demo's are forseen:
 
 1. [Onboard Kubernetes clusters to Azure Arc](./docs/arc-onboarding.md)
-2. [Enable and use GitOps to deploy in cluster resources]()./docs/gitops.md
+2. [Enable and use GitOps to deploy in cluster resources](./docs/gitops.md)
 3. [Deploy and manage Kubernetes clusters with the Cluster API](./docs/cluster-api.md)
 
 ## Setup your environment
