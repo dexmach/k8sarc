@@ -114,7 +114,7 @@ az connectedk8s enable-features --features cluster-connect --name edge-hardware-
 #### Test from any other location with internet access
 
 ``` bash
-az connectedk8s proxy --name edge-hardware-02 --resource-group rg-aks-arc -f edge-hardware-01.kubeconfig
+az connectedk8s proxy --name edge-hardware-02 --resource-group rg-aks-arc -f edge-hardware-02.kubeconfig
 # other terminal
 export KUBECONFIG=$PWD/edge-hardware-01.kubeconfig
 kubectl get po -A
